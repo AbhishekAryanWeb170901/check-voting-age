@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>check voting age</title>
+    <style>
+        *{
+        
+         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        body{
+            background-image: url("");
+            height: 100%;
+            width: 100%;
+        }
+        #decor{
+           display: grid;
+           background-image: url("");
+           gap: 10px;
+           grid-template-columns: repeat(1,1fr);
+           grid-template-rows: repeat(4,1fr);
+           margin: auto;
+            padding: 8%;
+            width: 80%;
+            border-radius: 10px;
+            /* border: 1px solid; */
+            background-color: rgb(151, 151, 222);
+            margin: auto;       
+        }
+        p{
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 10px;
+            
+
+        }
+        button,
+        input,
+        select{
+            height: 30px;
+            border-radius: 8px;
+            border: transparent;
+        }
+        h3{
+            background-color: rgb(151, 151, 222);
+            text-align: center;
+            border-radius: 8px;
+            width: 50%;
+            margin: auto;
+            margin-top: 20px;
+            padding: 2%;
+        }
+    </style>
+</head>
+<body>
+   
+    <div id="decor">
+        <p>Check Legal Voting Age</p>
+    <input id="age" type="text" placeholder="Enter age here">
+    <input id="mob" type="text" placeholder="Enter number (Optional)">
+    <select name="" id="gender">
+        <option value="">Select Gender</option>
+        <option  value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+    <button onclick="signUp()">Check Status</button>
+    
+</div>
+<h3 id="displayAge">Legal Voting Age Status</h1>
+<h3 id="displayMob">Your Mobile Number</h1>
+<h3 id="displayGen">Your Age</h1>
+</body>
+</html>
+<script>
+    function signUp(){
+    var age=document.getElementById("age").value;
+    var mob=document.getElementById("mob").value;
+    var gender=document.getElementById("gender").value;
+    document.getElementById("displayAge").innerText=age;
+    document.getElementById("displayMob").innerText=mob;
+    document.getElementById("displayGen").innerText=gender;
+    let userAge = document.getElementById("age").value;
+    if(userAge>18){
+        document.getElementById("displayAge").innerText="You Can Vote";
+    }
+    else if(userAge<18){
+        document.getElementById("displayAge").innerText="You Can't Vote";
+    }
+    else{
+        document.getElementById("displayAge").innerText="You Are Just Old Enough To Vote";
+    }
+        console.log(age, mob, gender);
+    }
+   
+</script>
